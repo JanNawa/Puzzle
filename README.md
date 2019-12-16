@@ -4,31 +4,30 @@ The formatting requirements are in the csci 3901 course assignment #4.
 The program could solve the puzzle if the given puzzle is solvable. 
 The result could be printed to the file in puzzle format.
 
-The solution uses serveral divisions between the kinds of information 
-in the input files:
+The solution uses serveral divisions between the kinds of information in the input files:
 * create puzzle board by using number of column and row
 * store all the slots in the data structure
 * store all the words in the data structure
 
 The puzzle will be solved by 
-	1. Identify slots
-	
-	2. Try each slot with the word with the same length as slot
-	
-	3. If every slots can be filled without conflict, it is solved.
+* Identify slots
+* Try each slot with the word with the same length as slot
+* If every slots can be filled without conflict, it is solved.
 
 The puzzle will be written to the file as a puzzle in the borad format.
 For example: 
+```
 			 f    
 			 r  b 
 			 array
 			 i  s 
 			plush 
+```
 
 ## Files and external data
 There are 2 main files:
-	1. FillInPuzzle.java - class that load puzzle, solve puzzle and write puzzle to file
-	2. PuzzleBox.java - class that indicate the starting box and direction in the puzzle
+* FillInPuzzle.java - class that load puzzle, solve puzzle and write puzzle to file
+* PuzzleBox.java - class that indicate the starting box and direction in the puzzle
 
 ## Data structures and their relations to each other
 ### puzzle
@@ -77,15 +76,14 @@ The program processes the input file one line at a time. The data is
 distinguished by using the regex and assigned the information into appropriated
 data structure.
 
-The puzzle is solved by following the steps below (back-tracking with recursion):
-	1. Get 1 slot from the wordSlots
+The puzzle is solved by following the steps below (back-tracking with recursion): &nbsp;
+	1. Get 1 slot from the wordSlots&nbsp;
 * extract the key-value to get information about that slot
-* if the wordSlots is empty, stop solving.
+* if the wordSlots is empty, stop solving. &nbsp;
 	2. Create copy of puzzle for back-tracking
-	3. Get all the words that have the same length as the value from slot
-			this will help in improve efficiency 
-			by only choosing the word that is possible fit to the slot
-	4. Loop through all the words with same length
+	3. Get all the words that have the same length as the value from slot this will help in improve efficiency 
+			by only choosing the word that is possible fit to the slot &nbsp;
+	4. Loop through all the words with same length &nbsp;
 * if the word is already used, skip that word
 			Increase the efficiency by having the data structure 
 			to keep track of the words used. Therefore, 
@@ -93,10 +91,10 @@ The puzzle is solved by following the steps below (back-tracking with recursion)
 			the word with the same length.
 * if part of the slot is filled, check for conflict
 			* if there is conflict, exit and continue the loop to next word
-			* if no conflict, fill the slot with the word
-	5. Try next slot (Recursion from the step 1)
-	6. If the recursion can't find the solution, revert back and try next word.
-	7. If no solution, revert back and put slot back and go back.
+			* if no conflict, fill the slot with the word &nbsp;
+	5. Try next slot (Recursion from the step 1) &nbsp;
+	6. If the recursion can't find the solution, revert back and try next word. &nbsp;
+	7. If no solution, revert back and put slot back and go back. &nbsp;
 
 The program writes the output to the file one line at a time from the puzzle
 that stored in 2D array. The symbol "+" is changed to " ", 
