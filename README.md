@@ -12,7 +12,9 @@ in the input files:
 
 The puzzle will be solved by 
 	1. Identify slots
+	
 	2. Try each slot with the word with the same length as slot
+	
 	3. If every slots can be filled without conflict, it is solved.
 
 The puzzle will be written to the file as a puzzle in the borad format.
