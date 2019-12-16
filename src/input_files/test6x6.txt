@@ -1,0 +1,17 @@
+6 6 8
+2 5 3 v
+1 4 4 v
+1 4 4 h
+0 3 3 h
+4 4 4 v
+4 3 2 h
+1 1 4 h
+2 1 2 v
+paim
+gal
+nice
+id
+pain
+pal
+mice
+is
