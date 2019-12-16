@@ -76,25 +76,25 @@ The program processes the input file one line at a time. The data is
 distinguished by using the regex and assigned the information into appropriated
 data structure.
 
-The puzzle is solved by following the steps below (back-tracking with recursion): &nbsp;
-	1. Get 1 slot from the wordSlots&nbsp;
+The puzzle is solved by following the steps below (back-tracking with recursion):
+### 1. Get 1 slot from the wordSlots
 * extract the key-value to get information about that slot
-* if the wordSlots is empty, stop solving. &nbsp;
-	2. Create copy of puzzle for back-tracking
-	3. Get all the words that have the same length as the value from slot this will help in improve efficiency 
-			by only choosing the word that is possible fit to the slot &nbsp;
-	4. Loop through all the words with same length &nbsp;
-* if the word is already used, skip that word
+* if the wordSlots is empty, stop solving.
+### 2. Create copy of puzzle for back-tracking
+### 3. Get all the words that have the same length as the value from slot 
+This will help in improve efficiency by only choosing the word that is possible fit to the slot
+### 4. Loop through all the words with same length
+* if the word is already used, skip that word.
 			Increase the efficiency by having the data structure 
 			to keep track of the words used. Therefore, 
 			the duplication won't be made while iterate through 
 			the word with the same length.
 * if part of the slot is filled, check for conflict
 			* if there is conflict, exit and continue the loop to next word
-			* if no conflict, fill the slot with the word &nbsp;
-	5. Try next slot (Recursion from the step 1) &nbsp;
-	6. If the recursion can't find the solution, revert back and try next word. &nbsp;
-	7. If no solution, revert back and put slot back and go back. &nbsp;
+			* if no conflict, fill the slot with the word 
+### 5. Try next slot (Recursion from the step 1) 
+### 6. If the recursion can't find the solution, revert back and try next word. 
+### 7. If no solution, revert back and put slot back and go back. 
 
 The program writes the output to the file one line at a time from the puzzle
 that stored in 2D array. The symbol "+" is changed to " ", 
